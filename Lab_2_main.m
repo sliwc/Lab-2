@@ -1,13 +1,13 @@
-clear all;
+clear;
 close all;
-tol = 10^(-4);
+tol = 10^-4;
 % Define call function numerically
 [x1,y1] = meshgrid(-5:0.1:5,-5:0.1:5);
 f = Lab_2_Fun(x1,y1);
-f = meshgrid(f);
+z = meshgrid(f);
 % Plot surface
 surface = figure; figure(surface);
-surf(x1,y1,f); shading interp;
+surf(x1,y1,z); shading interp;
 
 % Initial guess
 x0 = [0,0];

@@ -1,4 +1,4 @@
-function [z] = Lab_2_Fun(x1,y1);
+function [z] = Lab_2_Fun(x1,y1)
 s = size(x1);
 for i = 1:s
     x = x1(i);

@@ -1,7 +1,8 @@
-function [X, traf, f, k, Err] = Lab_2_sdm(x0,tol);
-k = 0; ea  =1;
+function [X, traj, f, k, Err] = Lab_2_sdm(x0,tol)
+k = 0; ea = 0;
 X = x0; traj = [];
-f(0,0) = Lab_2_Fun;
+fx = (x^2 + y - 11)^2 + (x + y^2 - 7)^2;
+f = Lab_2_Fun(0,0);
 Err = NaN;
 While ea > tol,
     % evaluate gradient
@@ -22,7 +23,7 @@ While ea > tol,
 
     %Evaluate Steepest Descent Formula
     nextx = x-grad*h;
-    nexty = y-grad*h
+    nexty = y-grad*h;
     xnew = [nextx, nexty];
 
     %store solution in a vector
