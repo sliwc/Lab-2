@@ -37,6 +37,6 @@ while ea > tol
     ea = norm(xnew-X);
     Err = [Err ea];
     X = xnew;
-    f(k+1) = Lab_2_Fun(X(1),X(2));
+    f= Lab_2_Fun(X(1),X(2));
 end
 
