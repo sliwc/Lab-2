@@ -1,0 +1,9 @@
+function [z] = Lab_2_Fun(x1,y1);
+s = size(x1);
+for i = 0:s
+    x = x1(i);
+    y = y1(i);
+    z = x^4 + y^4 - 21*x^2 - 13*y^2 + x*y^2 - 14*x - 22*y + 170;
+    b = (x^2 + y - 11)^2 + 
+
+    

@@ -1,10 +1,9 @@
-clear all;
-close all;
-tol = 10^(-4);
+
+wtol = 10^(-4);
 % Define call function numerically
 [x1,y1] = meshgrid(-5:0.1:5,-5:0.1:5);
 f = Lab_2_Fun(x1,y1);
-f = meshgrid(f);
+
 % Plot surface
 surface = figure; figure(surface);
 surf(x1,y1,f); shading interp;
