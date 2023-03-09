@@ -1,18 +1,18 @@
-function [X, traf, f, k, Err] = Lab_2_sdm(x0,tol);
-k = 0; ea  =1;
+function [X, traf, f, k, Err] = Lab_2_Newton(x0,tol)
+k = 0; ea  = 1;
 X = x0; traj = [];
-f(0,0) = Lab_2_Fun;
+f = Lab_2_Fun(0,0);
 Err = NaN;
-While ea > tol,
+while ea > tol
     % evaluate gradient
-    dx = 4*x^3 - 42*x + y^2 - 14;
-    dy = 4*y^3 - 26*y + 2*x*y - 22;
+    dx = 4*x^3 +4*x*y - 42*x + 2*y^2 - 14;
+    dy = 4*y^3 - 26*y + 4*x*y + 2*x^2 - 22;
     grad = [dx dy];
 
     % evaluate hessian
-    ddx = 12*x^2 - 42;
-    ddy = 12*y^2 - 26;
-    dxdy = 2*y;
+    ddx = 12*x^2 +4*y - 42;
+    ddy = 12*y^2 + 4*x - 26;
+    dxdy = 4*x + 4*y;
     hess = [ddx dxdy, dxdy ddy];
     
     %Evaluate Steepest Descent Formula

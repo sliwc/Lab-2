@@ -11,19 +11,19 @@ x = 0; y = 0; tol = 10^-4; X = [x y];
 while ea > tol
     % evaluate gradient
     dx = 4*x^3 +4*x*y - 42*x + 2*y^2 - 14;
-    dy = 4*y^3 - 26*y + 4*x*y + 2*x^2 - 22;
+    dy = 4*y^3 - 26*y + 4*x*y + 2*- 22;
     grad = [dx; dy];
     
-    % evaluate hessian
-    ddx = 12*x^2 +4*y - 42;
-    ddy = 12*y^2 + 4*x - 26;
-    dxdy = 4*x + 4*y;
-    hess = [ddx dxdy; dxdy ddy];
 
+    % evaluate hessian
+    ddx = 12*x^2 - 42;
+    ddy = 12*y^2 - 26;
+    dxdy = 2*y;
+    hess = [ddx dxdy; dxdy ddy];
     %evaluate step size
     gradt = transpose(grad);
     h_upper = gradt*grad;
-    h_lower = grad*hess*gradt;
+    h_lower = hess*grad*gradt;
     h = abs(h_upper/h_lower);
 
     %Evaluate Steepest Descent Formula

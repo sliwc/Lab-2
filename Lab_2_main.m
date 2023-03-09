@@ -14,6 +14,7 @@ x0 = [0,0];
 
 % Call methods
 [X,traj,Z,k,Err] = Lab_2_sdm(x0,tol);
+%[X,traj,Z,k,Err] = Lab_2_Newton(x0,tol);
 
 
 %Add trajectory for finding minima (3D plot)
