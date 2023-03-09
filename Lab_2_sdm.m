@@ -1,5 +1,3 @@
-clear
-close
 function [X, traj, f, k, Err] = Lab_2_sdm(x0,tol)
 k = 0; ea = 1;
 X = x0; 
@@ -22,8 +20,6 @@ while ea > tol
 
     %evaluate step size
     gradt = transpose(grad);
-    %     h_upper = gradt*grad;
-    %     h_lower = grad*hess*gradt;
     hesst = [ddy -dxdy; -dxdy ddx];
     hdet = ddy*ddx - (-dxdy)^2;
     h = hesst/hdet;
@@ -41,6 +37,6 @@ while ea > tol
     ea = norm(xnew-X);
     Err = [Err ea];
     X = xnew;
-    f(k+1) = Lab_2_Fun(X);
+    f(k+1) = Lab_2_Fun(X(1),X(2));
 end
 

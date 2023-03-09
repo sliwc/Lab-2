@@ -18,7 +18,7 @@ x0 = [0,0];
 
 
 %Add trajectory for finding minima (3D plot)
-plot3(traj(:,1), traf(:,2), Z(:,1) ,'-k+');
+plot3(traj(:,1), traj(:,2), Z(:,1) ,'-k+');
 
 % Plot contour (2D plot)
 contour_graph = figure; figure(contour_graph);
