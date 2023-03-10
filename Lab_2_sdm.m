@@ -1,7 +1,7 @@
 function [X, traj, f, k, Err] = Lab_2_sdm(x0,tol)
 k = 0; ea = 1;
-% x0 = [0,0];
-% tol = 10^-4;
+x0 = [0,0];
+tol = 10^-4;
 X = x0; 
 
 x = X(1); y = X(2);
