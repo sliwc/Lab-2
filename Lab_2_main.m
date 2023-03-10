@@ -16,9 +16,12 @@ x0 = [0,0];
 [X,traj,Z,k,Err] = Lab_2_sdm(x0,tol);
 %[X,traj,Z,k,Err] = Lab_2_Newton(x0,tol);
 
+%fix traj size
+traj(:,[2,3,4,5]) = [];
+%traj(:,[2,4,6,8,10,12,14,16,18,20,22]) = [];
 
 %Add trajectory for finding minima (3D plot)
-plot3(traj(:,1), traj(:,2), Z(:,1) ,'-k+');
+plot3(traj(1,:), traj(2,:), Z(1,:) ,'-k+');
 
 % Plot contour (2D plot)
 contour_graph = figure; figure(contour_graph);
