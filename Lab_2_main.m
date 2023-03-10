@@ -8,7 +8,7 @@ f = Lab_2_Fun(x1,y1);
 
 
 % Initial guess
-x0 = [1;1];
+x0 = [-5;0];
 
 % Call methods
 %[X,traj,Z,k,Err] = Lab_2_sdm(x0,tol);
@@ -27,3 +27,16 @@ contour_graph = figure; figure(contour_graph);
 contour(x1,y1,f,100); 
 hold on;
 plot(X(1,:), X(2,:), '-k+');
+
+%final point
+X
+[~,index] = min(Z);
+%function evaluation
+foptimum = Z(index)
+ERRAprox = Err(index)
+iterations = k
+
+trajt = transpose(traj);
+Zt = transpose(Z);
+eat = transpose(Err);
+
