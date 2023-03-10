@@ -1,15 +1,9 @@
 function [X, traj, f, k, Err] = Lab_2_sdm(x0,tol)
 k = 0; ea = 1;
-x0 = [0,0];
-tol = 10^-4;
-X = x0; 
-
-x = X(1); y = X(2);
-%troubleshoot section
+X = x0;
 traj = [];
 f(1) = Lab_2_Fun(X(1),X(2));
 Err = NaN;
-
     while ea > tol
         % evaluate gradient 
         grad = Lab_2_grad(X(1),X(2));
@@ -19,7 +13,7 @@ Err = NaN;
     
         %evaluate step size
         gradt = transpose(grad);
-        hnum = gradt*grad;
+        hnum = (gradt*grad);
         hden = gradt*hess*grad;
         h = norm(hnum/hden);
     
@@ -27,7 +21,7 @@ Err = NaN;
 %         nextx = x-grad*h;
 %         nexty = y-grad*h;
 %         xnew = [nextx nexty];
-        xnew = X-grad*h;
+        xnew = X - grad*h;
     
         %store solution in a vector
         traj = [traj xnew];

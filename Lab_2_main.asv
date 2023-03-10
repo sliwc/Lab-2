@@ -8,7 +8,7 @@ f = Lab_2_Fun(x1,y1);
 
 
 % Initial guess
-x0 = [1;1];
+x0 = [00];
 
 % Call methods
 %[X,traj,Z,k,Err] = Lab_2_sdm(x0,tol);
